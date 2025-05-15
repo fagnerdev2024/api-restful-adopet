@@ -1,6 +1,7 @@
 package br.com.fagnerdev.api_restful_adopet.controller;
 
 import br.com.fagnerdev.api_restful_adopet.model.Pet;
+import br.com.fagnerdev.api_restful_adopet.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

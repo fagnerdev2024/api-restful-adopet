@@ -2,7 +2,9 @@ package br.com.fagnerdev.api_restful_adopet.controller;
 
 import br.com.fagnerdev.api_restful_adopet.model.Abrigo;
 import br.com.fagnerdev.api_restful_adopet.model.Pet;
+import br.com.fagnerdev.api_restful_adopet.repository.AbrigoRepository;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

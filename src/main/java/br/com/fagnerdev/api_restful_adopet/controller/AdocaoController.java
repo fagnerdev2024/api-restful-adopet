@@ -2,10 +2,13 @@ package br.com.fagnerdev.api_restful_adopet.controller;
 
 import br.com.fagnerdev.api_restful_adopet.model.Adocao;
 import br.com.fagnerdev.api_restful_adopet.model.StatusAdocao;
+import br.com.fagnerdev.api_restful_adopet.repository.AdocaoRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;

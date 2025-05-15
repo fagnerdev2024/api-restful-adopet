@@ -1,6 +1,7 @@
 package br.com.fagnerdev.api_restful_adopet.controller;
 
 import br.com.fagnerdev.api_restful_adopet.model.Tutor;
+import br.com.fagnerdev.api_restful_adopet.repository.TutorRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
