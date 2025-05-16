@@ -1,5 +1,6 @@
 package br.com.fagnerdev.api_restful_adopet.controller;
 
+import br.com.fagnerdev.api_restful_adopet.dto.DadosDetalhesPet;
 import br.com.fagnerdev.api_restful_adopet.model.Pet;
 import br.com.fagnerdev.api_restful_adopet.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,12 @@ public class PetController {
     private PetRepository repository;
 
     @GetMapping
-    public ResponseEntity<List<Pet>> listarTodosDisponiveis() {
+    public ResponseEntity<List<DadosDetalhesPet>> listarTodosDisponiveis() {
         List<Pet> pets = repository.findAll();
-        List<Pet> disponiveis = new ArrayList<>();
+        List<DadosDetalhesPet> disponiveis = new ArrayList<>();
         for (Pet pet : pets) {
             if (pet.getAdotado() == false) {
-                disponiveis.add(pet);
+                disponiveis.add(new DadosDetalhesPet(pet));
             }
         }
         return ResponseEntity.ok(disponiveis);

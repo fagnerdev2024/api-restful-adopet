@@ -1,5 +1,8 @@
 package br.com.fagnerdev.api_restful_adopet.controller;
 
+import br.com.fagnerdev.api_restful_adopet.dto.AprovacaoAdocaoDto;
+import br.com.fagnerdev.api_restful_adopet.dto.ReprovacaoAdocaoDto;
+import br.com.fagnerdev.api_restful_adopet.dto.SolicitacaoAdocaoDto;
 import br.com.fagnerdev.api_restful_adopet.model.Adocao;
 import br.com.fagnerdev.api_restful_adopet.service.AdocaoService;
 import jakarta.validation.Valid;
@@ -18,9 +21,9 @@ public class AdocaoController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<String> solicitar(@RequestBody @Valid Adocao adocao) {
+    public ResponseEntity<String> solicitar(@RequestBody @Valid SolicitacaoAdocaoDto solicitacaoAdocaoDto) {
         try {
-            this.adocaoService.solicitar(adocao);
+            this.adocaoService.solicitar(solicitacaoAdocaoDto);
             return ResponseEntity.ok("Adoção solciitada com sucesso!");
         } catch (ValidationException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -29,15 +32,15 @@ public class AdocaoController {
 
     @PutMapping("/aprovar")
     @Transactional
-    public ResponseEntity<String> aprovar(@RequestBody @Valid Adocao adocao) {
-        this.adocaoService.aprovar(adocao);
+    public ResponseEntity<String> aprovar(@RequestBody @Valid AprovacaoAdocaoDto aprovacaoAdocaoDto) {
+        this.adocaoService.aprovar(aprovacaoAdocaoDto);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/reprovar")
     @Transactional
-    public ResponseEntity<String> reprovar(@RequestBody @Valid Adocao adocao) {
-        this.adocaoService.reprovar(adocao);
+    public ResponseEntity<String> reprovar(@RequestBody @Valid ReprovacaoAdocaoDto reprovacaoAdocaoDto) {
+        this.adocaoService.reprovar(reprovacaoAdocaoDto);
         return ResponseEntity.ok().build();
     }
 
