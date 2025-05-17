@@ -17,16 +17,12 @@ import java.util.Objects;
 @Table(name = "abrigos")
 public class Abrigo {
 
-    //teste
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-
-
-
-    
     @NotBlank
     @Column(name = "nome")
     private String nome;
