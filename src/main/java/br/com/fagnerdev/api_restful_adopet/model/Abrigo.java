@@ -18,7 +18,6 @@ public class Abrigo {
     @Column(name = "id")
     private Long id;
 
-    //teste
     @NotBlank
     @Column(name = "nome")
     private String nome;
