@@ -17,7 +17,7 @@ import java.util.Objects;
 @Table(name = "abrigos")
 public class Abrigo {
 
-    //teste id
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
